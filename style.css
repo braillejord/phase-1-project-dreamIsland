@@ -1,0 +1,30 @@
+#previewCardContainer {
+    width: 50%;
+    justify-content: center;
+}
+
+#previewBackground {
+    background-color: rgb(88, 188, 88);
+    height: 30%;
+    width: 17%;
+    float: left;
+    border-radius: 20%;
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 100px;
+    min-height: 200px;
+
+}
+#previewImage {
+    width: 80%;
+    position: relative;
+    justify-content: center
+    ;
+}
+.border {
+    height: 200px;
+    width: 2%;
+    float: left;
+}
+
