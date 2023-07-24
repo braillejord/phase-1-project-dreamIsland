@@ -43,5 +43,23 @@
     justify-content: center;
 }
 
+/* BigCard styling */
+#bigCard {
+    background-color: rgb(88, 188, 88);
+    height: 1%;
+    display: flex-wrap;
+    justify-content: center;
+}
+
+.bigInfo {
+    background-color: darkkhaki;
+    border-radius: 20%;
+    width: min-content;
+    height: min-content;
+}
+
+.bigName {
+
+}
 
 
