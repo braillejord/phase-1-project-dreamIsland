@@ -30,3 +30,8 @@ function previewCard(allChar) {
     previewCard.appendChild(previewIcon)
     }
 }
+
+/////Function for Filter Menu//////
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
