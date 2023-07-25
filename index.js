@@ -61,12 +61,29 @@ function renderBigCard(id) {
         })
 }
 
+///Function for Sorting Small Cards by Character Name Alphabetically/////
+
+function sortAlphabeticallyAZ
+
 ///Function for Personality Filter//////
 
 function searchByPersonality(personality) {
     const animals = document.getElementsByClassName("personality")
     Array.from(animals).forEach(animal => {
         if (animal.innerText === personality) {
+            animal.parentNode.style.display = "block"
+        } else {
+            animal.parentNode.style.display = "none"
+        }
+    })
+}
+
+///Function for Species Filter//////
+
+function searchBySpecies(species) {
+    const animals = document.getElementsByClassName("species")
+    Array.from(animals).forEach(animal => {
+        if (animal.innerText === species) {
             animal.parentNode.style.display = "block"
         } else {
             animal.parentNode.style.display = "none"
