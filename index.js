@@ -2,10 +2,10 @@ const animalCrossingApi = "http://acnhapi.com/v1/villagers/"
 const previewList = document.getElementById("previewCardContainer")
 
 
-const fetchAnimals = 
-fetch(animalCrossingApi)
-.then(r => r.json())
-.then(allChar => previewCard(allChar))
+const fetchAnimals =
+    fetch(animalCrossingApi)
+        .then(r => r.json())
+        .then(allChar => previewCard(allChar))
 
 
 function previewCard(allChar) {
@@ -53,9 +53,6 @@ function renderBigCard(id) {
 
 function filterBar() {
     document.getElementById("filterBar").classList.toggle("show");
-}
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 //search bar
