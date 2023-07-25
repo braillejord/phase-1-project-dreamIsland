@@ -50,6 +50,10 @@ function renderBigCard(id) {
 }
 
 /////Function for Filter Menu//////
+
+function filterBar() {
+    document.getElementById("filterBar").classList.toggle("show");
+}
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
