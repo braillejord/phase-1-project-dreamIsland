@@ -9,7 +9,7 @@ fetch(animalCrossingApi)
 
 
 function previewCard(allChar) {
-    for (let char in allChar) {
+    for (let char in allChar) 
         const singleChar = allChar[char]
 
         const previewCard = document.createElement("div")
