@@ -58,7 +58,7 @@ function filterBar() {
 //search bar
 const searchBar = document.getElementById("searchField")
 searchBar.addEventListener("input", (e) => {
-    const searchValue = e.target.value
+    const searchValue = e.target.value.toLowerCase()
     const animals = document.querySelectorAll("p.previewName")
     animals.forEach(animal => {
         if (animal.textContent.toLowerCase().includes(searchValue)) {
