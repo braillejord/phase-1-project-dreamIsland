@@ -2,14 +2,14 @@ const animalCrossingApi = "http://acnhapi.com/v1/villagers/"
 const previewList = document.getElementById("previewCardContainer")
 
 
-const fetchAnimals = 
-fetch(animalCrossingApi)
-.then(r => r.json())
-.then(allChar => previewCard(allChar))
+const fetchAnimals =
+    fetch(animalCrossingApi)
+        .then(r => r.json())
+        .then(allChar => previewCard(allChar))
 
 
 function previewCard(allChar) {
-    for (let char in allChar) 
+    for (let char in allChar) {
         const singleChar = allChar[char]
 
         const previewCard = document.createElement("div")
@@ -67,4 +67,3 @@ searchBar.addEventListener("input", (e) => {
         }
     })
 })
-//
