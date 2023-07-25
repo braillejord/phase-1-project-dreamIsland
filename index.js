@@ -32,6 +32,12 @@ function previewCard(allChar) {
         previewId.style.display = "none"
         previewCard.appendChild(previewId)
 
+
+        const favoriteValue = document.createElement("p")
+        favoriteValue.classList.add("favorite")
+        favoriteValue.innerText = 0
+        previewCard.appendChild(favoriteValue)
+
         const previewSpecies = document.createElement("p")
         previewSpecies.setAttribute("id", singleChar.species)
         previewSpecies.style.display = "none"
@@ -75,4 +81,20 @@ searchBar.addEventListener("input", (e) => {
         }
     })
 })
-//
+//Favorite button below
+const favoriteButton = document.getElementById("favoriteButton")
+const favoriteAnimal = document.querySelectorAll("p.favorite")
+favoriteButton.addEventListener("click", () => {
+    if (favoriteAnimal.innerText == 0) {
+        favoriteAnimal.innerText += 1
+    } else (favoriteAnimal.innerText == 1); {
+        favoriteAnimal.innerText -= 0
+    }
+})
+
+// //MyVillagersButton
+// const MyVillagersButton = document.getElementById("myVillagersButton")
+// MyVillagersButton.addEventListener("click",()=>{
+//     console.log("hi")
+// })
+
