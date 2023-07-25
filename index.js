@@ -29,10 +29,12 @@ function previewCard(allChar) {
 
         const previewId = document.createElement("p")
         previewId.setAttribute("id", singleChar.id)
+        previewId.style.display = "none"
         previewCard.appendChild(previewId)
 
         const previewSpecies = document.createElement("p")
         previewSpecies.setAttribute("id", singleChar.species)
+        previewSpecies.style.display = "none"
         previewCard.appendChild(previewSpecies)
 
         previewCard.onclick = () => {
