@@ -32,6 +32,6 @@ function previewCard(allChar) {
 }
 
 /////Function for Filter Menu//////
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+function filterBar() {
+    document.getElementById("filterBar").classList.toggle("show");
 }
