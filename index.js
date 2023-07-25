@@ -29,19 +29,25 @@ function previewCard(allChar) {
 
         const previewId = document.createElement("p")
         previewId.setAttribute("id", singleChar.id)
+        previewId.style.display = "none"
         previewCard.appendChild(previewId)
+
 
         const favoriteValue = document.createElement("p")
         favoriteValue.classList.add("favorite")
         favoriteValue.innerText = 0
         previewCard.appendChild(favoriteValue)
 
-        
+        const previewSpecies = document.createElement("p")
+        previewSpecies.setAttribute("id", singleChar.species)
+        previewSpecies.style.display = "none"
+        previewCard.appendChild(previewSpecies)
 
         previewCard.onclick = () => {
             renderBigCard(singleChar.id)
         }
     }
+    renderBigCard(Math.floor(Math.random() * (391 - 1 + 1) + 1))
 }
 
 function renderBigCard(id) {
