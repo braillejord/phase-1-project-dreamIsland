@@ -54,9 +54,6 @@ function renderBigCard(id) {
 function filterBar() {
     document.getElementById("filterBar").classList.toggle("show");
 }
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
 //search bar
 const searchBar = document.getElementById("searchField")
