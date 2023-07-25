@@ -31,6 +31,10 @@ function previewCard(allChar) {
         previewId.setAttribute("id", singleChar.id)
         previewCard.appendChild(previewId)
 
+        const previewSpecies = document.createElement("p")
+        previewSpecies.setAttribute("id", singleChar.species)
+        previewCard.appendChild(previewSpecies)
+
         previewCard.onclick = () => {
             renderBigCard(singleChar.id)
         }
