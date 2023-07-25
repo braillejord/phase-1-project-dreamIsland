@@ -47,9 +47,10 @@ function renderBigCard(id) {
         .then(oneChar => {
             bigCardImage.src = oneChar.image_uri
             bigName.innerText = oneChar.name['name-USen']
-            bigSpecies.innerText = oneChar.species
-            bigPersonality.innerText = oneChar.personality
-            bigBirthday.innerText = oneChar['birthday-string']
+            bigSpecies.innerText = 'Villager Species: ' + oneChar.species
+            bigPersonality.innerText = 'Villager Personality: ' + oneChar.personality
+            bigBirthday.innerText = 'Villager Birthday: ' + oneChar['birthday-string']
+            bigCatchphrase.innerText = 'Villager Catchphrase: ' + oneChar['catch-phrase']
         })
 }
 

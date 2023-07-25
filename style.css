@@ -6,12 +6,14 @@ body {
 
 /* header */
 #header {
-    background-color: burlywood;
+    background-color: #D4C2AD;
+    border-radius: 10px;
     display: flex;
-    /* we'll want to adjust below */
+    margin-bottom: 10px;
+    /* we'll want to adjust these styles below */
+    /* figure out height of header bar */
     flex-direction: row;
     gap: 20%;
-    /* items to be adjusted above */
 }
 
 
@@ -24,7 +26,7 @@ body {
 
 #littleCards {
     display: flex;
-    width: 50%;
+    /* width: 70%; */
     height: 90%;
     overflow: scroll;
     overflow-y: auto;
@@ -32,7 +34,7 @@ body {
 }
 
 #previewCardContainer {
-    background-color: #266854;
+    background-color: #D7A184;
     justify-content: center;
     gap: 10px;
     display: flex;
@@ -55,7 +57,7 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgb(88, 188, 88);
+    background-color: #D7A184;
     height: 200px;
     width: 150px;
     border-radius: 10%;
@@ -74,26 +76,26 @@ ul {
 }
 
 @-webkit-keyframes wiggle {
-    0% {-webkit-transform: rotate(1deg);}
-    25% {-webkit-transform: rotate(-1deg);}
-    50% {-webkit-transform: rotate(1deg);}
-    75% {-webkit-transform: rotate(-1deg);}
+    0% {-webkit-transform: rotate(3deg);}
+    25% {-webkit-transform: rotate(-3deg);}
+    50% {-webkit-transform: rotate(3deg);}
+    75% {-webkit-transform: rotate(-3deg);}
     100% {-webkit-transform: rotate(0deg);}
 }
 
 @-ms-keyframes wiggle {
-    0% {-ms-transform: rotate(1deg);}
-    25% {ms-transform: rotate(-1deg);}
-    50% {ms-transform: rotate(1.5deg);}
-    75% {-ms-transform: rotate(-5deg);}
+    0% {-ms-transform: rotate(3deg);}
+    25% {ms-transform: rotate(-3deg);}
+    50% {ms-transform: rotate(3deg);}
+    75% {-ms-transform: rotate(-3deg);}
     100% {-ms-transform: rotate(0deg);}
 }
 
 @keyframes wiggle {
-    0% {transform: rotate(1deg);}
-    25% {transform: rotate(-1deg);}
-    50% {transform: rotate(1.5deg);}
-    75% {transform: rotate(-5deg);}
+    0% {transform: rotate(3deg);}
+    25% {transform: rotate(-3deg);}
+    50% {transform: rotate(3deg);}
+    75% {transform: rotate(-3deg);}
     100% {transform: rotate(0deg);}
 }
 
@@ -101,7 +103,7 @@ ul {
     display: block;
     width: 80%;
     margin: 0;
-    background-color: #F5F5F5;
+    background-color: #EFDFCC;
     border-radius: 50%;
     padding: 5px;
 }
@@ -113,30 +115,30 @@ ul {
     text-align: center;
     border-style: solid;
     border-radius: 10px;
-    border-color: #F5F5F5;
-    background-color: #F5F5F5;
+    border-color: #EFDFCC;
+    background-color: #EFDFCC;
     padding: 0px 20px;
 }
 
 /* BigCard styling */
 #bigCard {
-    background-color: rgb(88, 188, 88);
-    width: 40%;
+    background-color: #66796B;
     flex-grow: 1;
     height: 1%;
-    display: block;
+    min-width: 400px;
+    display: flex;
     border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .bigInfo {
-    background-color: darkkhaki;
-    border-radius: 20%;
-    width: min-content;
-    height: min-content;
+    background-color: #EFDFCC;
 }
 
 .bigCardImage {
-    border-radius: 50%;
+    border-radius: 20px;
 }
 
 /*Filter Bar Styling*/
