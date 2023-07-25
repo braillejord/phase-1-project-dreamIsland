@@ -58,7 +58,7 @@ function myFunction() {
 const searchBar = document.getElementById("searchField")
 searchBar.addEventListener("input", (e) => {
     const searchValue = e.target.value
-    const animals = document.querySelectorAll("h3.previewName")
+    const animals = document.querySelectorAll("p.previewName")
     animals.forEach(animal => {
         if (animal.textContent.toLowerCase().includes(searchValue)) {
             animal.parentNode.style.display = "block"
