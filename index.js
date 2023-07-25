@@ -35,6 +35,7 @@ function previewCard(allChar) {
             renderBigCard(singleChar.id)
         }
     }
+    renderBigCard(Math.floor(Math.random() * (391 - 1 + 1) + 1))
 }
 
 function renderBigCard(id) {
