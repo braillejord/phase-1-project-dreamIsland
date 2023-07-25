@@ -29,12 +29,6 @@ function previewCard(allChar) {
         previewId.style.display = "none"
         previewCard.appendChild(previewId)
 
-
-        const favoriteValue = document.createElement("p")
-        favoriteValue.classList.add("favorite")
-        favoriteValue.innerText = 0
-        previewCard.appendChild(favoriteValue)
-
         const previewSpecies = document.createElement("p")
         previewSpecies.setAttribute("id", singleChar.species)
         previewSpecies.style.display = "none"
