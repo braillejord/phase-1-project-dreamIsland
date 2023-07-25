@@ -53,3 +53,18 @@ function renderBigCard(id) {
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+
+//search bar
+const searchBar = document.getElementById("searchField")
+searchBar.addEventListener("input", (e) => {
+    const searchValue = e.target.value
+    const animals = document.querySelectorAll("h3.previewName")
+    animals.forEach(animal => {
+        if (animal.textContent.toLowerCase().includes(searchValue)) {
+            animal.parentNode.style.display = "block"
+        } else {
+            animal.parentNode.style.display = "none"
+        }
+    })
+})
+//
