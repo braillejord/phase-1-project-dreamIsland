@@ -12,6 +12,7 @@ function previewCard(allChar) {
 
         const previewCard = document.createElement("div")
         previewCard.classList.add("previewCard")
+        previewCard.setAttribute("id", singleChar.name['name-USen'])
         previewList.appendChild(previewCard)
 
         const previewIcon = document.createElement("img")
@@ -63,7 +64,33 @@ function renderBigCard(id) {
 
 ///Function for Sorting Small Cards by Character Name Alphabetically/////
 
-// function sortAlphabeticallyAZ
+function sortAlphabeticallyAZ() {
+    const animals = Array.from(document.getElementsByClassName("previewCard"))
+    animals.sort(function (a, b) {
+        if (a.id > b.id) {
+            return 1;
+        }
+        if (b.id > a.id) {
+            return -1;
+        }
+        return 0;
+    });
+    console.log(animals)
+}
+
+function sortAlphabeticallyZA() {
+    const animals = Array.from(document.getElementsByClassName("previewCard"))
+    animals.sort(function (a, b) {
+        if (a.id > b.id) {
+            return -1;
+        }
+        if (b.id > a.id) {
+            return 1;
+        }
+        return 0;
+    });
+    console.log(animals)
+}
 
 ///Function for Personality Filter//////
 
