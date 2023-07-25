@@ -63,7 +63,7 @@ function renderBigCard(id) {
 
 ///Function for Sorting Small Cards by Character Name Alphabetically/////
 
-function sortAlphabeticallyAZ
+// function sortAlphabeticallyAZ
 
 ///Function for Personality Filter//////
 
@@ -88,6 +88,15 @@ function searchBySpecies(species) {
         } else {
             animal.parentNode.style.display = "none"
         }
+    })
+}
+
+function clearSpecies() {
+    const animals = document.getElementsByClassName("previewCard")
+    Array.from(animals).forEach(animal => {
+    if (animal.style.display = "none") {
+        animal.style.display = "block"
+    }
     })
 }
 
