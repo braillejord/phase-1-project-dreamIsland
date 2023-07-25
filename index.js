@@ -31,6 +31,13 @@ function previewCard(allChar) {
         previewId.setAttribute("id", singleChar.id)
         previewCard.appendChild(previewId)
 
+        const favoriteValue = document.createElement("p")
+        favoriteValue.setAttribute("favorite", singleChar.favorite)
+        favoriteValue.innerText = 0
+        previewCard.appendChild(favoriteValue)
+
+        
+
         previewCard.onclick = () => {
             renderBigCard(singleChar.id)
         }
@@ -68,4 +75,19 @@ searchBar.addEventListener("input", (e) => {
         }
     })
 })
-//
+//Favorite button below
+const favoriteButton = document.getElementById("favoriteButton")
+favoriteButton.addEventListener("click", () => {
+    if (p.favorite === 0) {
+        p.favorite.innerText = 1
+    } else (p.favorite === 1) {
+        p.favorite.innerText = 0
+    }
+})
+
+// //MyVillagersButton
+// const MyVillagersButton = document.getElementById("myVillagersButton")
+// MyVillagersButton.addEventListener("click",()=>{
+//     console.log("hi")
+// })
+
