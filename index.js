@@ -12,6 +12,7 @@ function previewCard(allChar) {
 
         const previewCard = document.createElement("div")
         previewCard.classList.add("previewCard")
+        previewCard.setAttribute("id", singleChar.name['name-USen'])
         previewList.appendChild(previewCard)
 
         const previewIcon = document.createElement("img")
@@ -63,6 +64,78 @@ function renderBigCard(id) {
         })
 }
 
+///Function for Sorting Small Cards by Character Name Alphabetically/////
+
+function sortAlphabeticallyAZ() {
+    const animals = Array.from(document.getElementsByClassName("previewCard"))
+    animals.sort(function (a, b) {
+        if (a.id > b.id) {
+            return 1;
+        }
+        if (b.id > a.id) {
+            return -1;
+        }
+        return 0;
+    })
+    previewList.innerText = ""
+    for (let animal of animals) {
+        renderSmallCard(animal)
+    }
+}
+
+function sortAlphabeticallyZA() {
+    const animals = Array.from(document.getElementsByClassName("previewCard"))
+    animals.sort(function (a, b) {
+        if (a.id > b.id) {
+            return -1;
+        }
+        if (b.id > a.id) {
+            return 1;
+        }
+        return 0;
+    });
+    previewList.innerText = ""
+    for (let animal of animals) {
+        renderSmallCard(animal)
+    }
+}
+function renderSmallCard(animal) {
+        const previewCard = document.createElement("div")
+        previewCard.classList.add("previewCard")
+        previewCard.setAttribute("id", animal.children[1].innerText)
+        previewList.appendChild(previewCard)
+
+        const previewIcon = document.createElement("img")
+        previewIcon.classList.add("previewIcon")
+        previewIcon.src = animal.children[0].src
+        previewCard.appendChild(previewIcon)
+
+        const previewName = document.createElement("p")
+        previewName.innerText = animal.children[1].innerText
+        previewName.classList.add("previewName")
+        previewCard.appendChild(previewName)
+
+        const previewId = document.createElement("p")
+        previewId.setAttribute("id", animal.children[2].id)
+        previewId.style.display = "none"
+        previewCard.appendChild(previewId)
+
+        const previewSpecies = document.createElement("p")
+        previewSpecies.setAttribute("class", "species")
+        previewSpecies.style.display = "none"
+        previewSpecies.innerText = animal.children[3].innerText
+        previewCard.appendChild(previewSpecies)
+
+        const previewPersonality = document.createElement("p")
+        previewPersonality.setAttribute("class", "personality")
+        previewPersonality.style.display = "none"
+        previewPersonality.innerText = animal.children[4].innerText
+        previewCard.appendChild(previewPersonality)
+
+        previewCard.onclick = () => {
+            renderBigCard(animal.children[2].id)
+        }
+    }
 ///Function for Personality Filter//////
 
 function searchByPersonality(personality) {
@@ -73,6 +146,28 @@ function searchByPersonality(personality) {
         } else {
             animal.parentNode.style.display = "none"
         }
+    })
+}
+
+///Function for Species Filter//////
+
+function searchBySpecies(species) {
+    const animals = document.getElementsByClassName("species")
+    Array.from(animals).forEach(animal => {
+        if (animal.innerText === species) {
+            animal.parentNode.style.display = "block"
+        } else {
+            animal.parentNode.style.display = "none"
+        }
+    })
+}
+
+function clearSpecies() {
+    const animals = document.getElementsByClassName("previewCard")
+    Array.from(animals).forEach(animal => {
+    if (animal.style.display = "none") {
+        animal.style.display = "block"
+    }
     })
 }
 
