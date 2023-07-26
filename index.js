@@ -218,6 +218,6 @@ favoriteButton.addEventListener("click", () => {
     renderFavoriteCards(updatedFavorites)
 })
 
-function renderFavoriteCards(updatedFavorites) {
-    console.log(updatedFavorites)
+function renderFavoriteCards(favorites) {
+    console.log(favorites)
 }
