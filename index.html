@@ -18,14 +18,32 @@
 <body>
     <header id="header">This is the header
         <div class="dropdown">
-            <button onclick="filterBar()" class="dropbtn">Filter</button>
-            <div id="filterBar" class="dropdown-content">
-            <a id="sortAZ">Name A-Z</a>
-            <a id="sortZA">Name Z-A</a>
+            <button class="dropbtn">Name</button>
+                <div id="nameFilter" class="dropdown-content">
+                    <a id="sortAZ">A-Z</a>
+                    <a id="sortZA">Z-A</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Species</button>
+            <div id="speciesFilter" class="dropdown-content">
+            <a id="sortAZ">A-Z</a>
+            <a id="sortZA">Z-A</a>
             <a id="sortSpecies">Species</a>
             <a id="sortPersonality">Personality</a>
-            <!-- <a href="#custom">Birthday</a>
-            <a href="#support">Favorites</a> -->
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Personality</button>
+            <div id="personalityFilter" class="dropdown-content">
+            <a onclick="searchByPersonality('Cranky')" id="Cranky">Cranky</a>
+            <a onclick="searchByPersonality('Jock')" id="Jock">Jock</a>
+            <a onclick="searchByPersonality('Lazy')" id="Lazy">Lazy</a>
+            <a onclick="searchByPersonality('Normal')" id="Normal">Normal</a>
+            <a onclick="searchByPersonality('Peppy')" id="Peppy">Peppy</a>
+            <a onclick="searchByPersonality('Uchi')" id="Uchi">Uchi</a>
+            <a onclick="searchByPersonality('Smug')" id="Smug">Smug</a>
+            <a onclick="searchByPersonality('Snooty')" id="Snooty">Snooty</a>
             </div>
         </div>
         <div id="searchField">

@@ -30,9 +30,16 @@ function previewCard(allChar) {
         previewCard.appendChild(previewId)
 
         const previewSpecies = document.createElement("p")
-        previewSpecies.setAttribute("id", singleChar.species)
+        previewSpecies.setAttribute("class", "species")
         previewSpecies.style.display = "none"
+        previewSpecies.innerText = singleChar.species
         previewCard.appendChild(previewSpecies)
+
+        const previewPersonality = document.createElement("p")
+        previewPersonality.setAttribute("class", "personality")
+        previewPersonality.style.display = "none"
+        previewPersonality.innerText = singleChar.personality
+        previewCard.appendChild(previewPersonality)
 
         previewCard.onclick = () => {
             renderBigCard(singleChar.id)
@@ -54,18 +61,25 @@ function renderBigCard(id) {
         })
 }
 
-/////Function for Filter Menu//////
+///Function for Personality Filter//////
 
-function filterBar() {
-    document.getElementById("filterBar").classList.toggle("show");
+function searchByPersonality(personality) {
+    const animals = document.getElementsByClassName("personality")
+    Array.from(animals).forEach(animal => {
+        if (animal.innerText === personality) {
+            animal.parentNode.style.display = "block"
+        } else {
+            animal.parentNode.style.display = "none"
+        }
+    })
 }
 
 //search bar
 const searchBar = document.getElementById("searchField")
 searchBar.addEventListener("input", (e) => {
     const searchValue = e.target.value.toLowerCase()
-    const animals = document.querySelectorAll("p.previewName")
-    animals.forEach(animal => {
+    const animals = document.getElementsByClassName("previewName")
+    Array.from(animals).forEach(animal => {
         if (animal.textContent.toLowerCase().includes(searchValue)) {
             animal.parentNode.style.display = "block"
         } else {
@@ -73,6 +87,8 @@ searchBar.addEventListener("input", (e) => {
         }
     })
 })
+
+
 //Favorite button below
 const favoriteButton = document.getElementById("favoriteButton")
 const favoriteAnimal = document.querySelectorAll("p.favorite")
@@ -89,4 +105,3 @@ favoriteButton.addEventListener("click", () => {
 // MyVillagersButton.addEventListener("click",()=>{
 //     console.log("hi")
 // })
-
