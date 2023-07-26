@@ -2,11 +2,14 @@
 body {
     font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* header */
 #header {
+    flex-grow: 1;
     background-color: #D4C2AD;
     border-radius: 10px;
     display: flex;
@@ -18,9 +21,24 @@ body {
     /* items to be adjusted above */
 }
 
+/* footer */
+#footer {
+    flex-grow: 1;
+    background-color: #D4C2AD;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 10px;
+    /* we'll want to adjust these styles below */
+    /* figure out height of footer bar */
+    flex-direction: row;
+    /* gap: 20%; */
+    /* items to be adjusted above */
+}
+
 
 /* main body */
 #masterBox {
+    flex-grow: 2;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -196,6 +214,10 @@ ul {
 
 .bigCardImage {
     border-radius: 20px;
+}
+
+.bigId {
+    display: none;
 }
 
 /*Filter Bar Styling*/
