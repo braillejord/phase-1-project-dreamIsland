@@ -84,6 +84,7 @@ function sortAlphabeticallyAZ() {
     for (let animal of animals) {
         renderSmallCard(animal)
     }
+    showTommyBoy()
 }
 
 function sortAlphabeticallyZA() {
@@ -97,6 +98,7 @@ function sortAlphabeticallyZA() {
     for (let animal of animals) {
         renderSmallCard(animal)
     }
+    showTommyBoy()
 }
 function renderSmallCard(animal) {
     const previewCard = document.createElement("div")
@@ -135,6 +137,7 @@ function renderSmallCard(animal) {
     previewCard.onclick = () => {
         renderBigCard(animal.children[2].id)
     }
+    showTommyBoy()
 }
 ///Function for Personality Filter//////
 
@@ -196,6 +199,7 @@ function checkForNoAnimals() {
 }
 
 function showTommyBoy() {
+    if (document.getElementById("Tom Nook") === null) {
     const previewCard = document.createElement("div")
     previewCard.classList.add("previewCard")
     previewCard.setAttribute("id", "Tom Nook")
@@ -228,7 +232,7 @@ function showTommyBoy() {
     previewPersonality.style.display = "none"
     previewPersonality.innerText = "noPersonality"
     previewCard.appendChild(previewPersonality)
-}
+}}
 
 //Favorite button below
 const favoriteButton = document.getElementById("favoriteButton")
