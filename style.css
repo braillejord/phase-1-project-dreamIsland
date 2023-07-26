@@ -214,6 +214,8 @@ ul {
 
 .bigCardImage {
     border-radius: 20px;
+    height: 256px;
+    width: 256px;
 }
 
 .bigId {
