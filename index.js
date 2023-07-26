@@ -54,11 +54,13 @@ function renderBigCard(id) {
         .then(r => r.json())
         .then(oneChar => {
             bigCardImage.src = oneChar.image_uri
+            bigCardImage.style
             bigName.innerText = oneChar.name['name-USen']
             bigSpecies.innerText = 'Species:  ' + oneChar.species
             bigPersonality.innerText = 'Personality:  ' + oneChar.personality
             bigBirthday.innerText = 'Birthday:  ' + oneChar['birthday-string']
             bigCatchphrase.innerText = 'Catchphrase:  ' + '"' + oneChar['catch-phrase'] + '"'
+            bigId.innerText = oneChar.id
         })
 }
 
@@ -195,8 +197,27 @@ favoriteButton.addEventListener("click", () => {
     }
 })
 
-// //MyVillagersButton
-// const MyVillagersButton = document.getElementById("myVillagersButton")
-// MyVillagersButton.addEventListener("click",()=>{
-//     console.log("hi")
-// })
+// 'bigId' will be the id for the id on the big card
+const newFavoriteId = document.getElementById('bigId')
+
+favoriteButton.addEventListener("click", () => {
+    //    console.log(localStorage.getItem('favorites').length)
+    const favoriteIdArray = []
+
+    if (localStorage.favorites === undefined) {
+        localStorage.setItem('favorites', JSON.stringify(favoriteIdArray))
+    }
+
+    const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+    console.log(currentFavorites)
+
+    const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+
+    renderFavoriteCards(updatedFavorites)
+})
+
+function renderFavoriteCards(updatedFavorites) {
+    console.log(updatedFavorites)
+}

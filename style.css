@@ -1,11 +1,15 @@
 /* whole page styles */
 body {
-    font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif
+    font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* header */
 #header {
+    flex-grow: 1;
     background-color: #D4C2AD;
     border-radius: 10px;
     display: flex;
@@ -17,26 +21,43 @@ body {
     /* items to be adjusted above */
 }
 
+/* footer */
+#footer {
+    flex-grow: 1;
+    background-color: #D4C2AD;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 10px;
+    /* we'll want to adjust these styles below */
+    /* figure out height of footer bar */
+    flex-direction: row;
+    /* gap: 20%; */
+    /* items to be adjusted above */
+}
+
 
 /* main body */
 #masterBox {
+    flex-grow: 2;
     display: flex;
     justify-content: center;
     gap: 10px;
+    height: 60%;
 }
 
 #littleCards {
     display: flex;
     /* width: 70%; */
-    height: 90%;
-    overflow: scroll;
-    overflow-y: auto;
+    height: 100%;
+    border-radius: 20px;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
 #previewCardContainer {
     background-color: #D7A184;
     justify-content: center;
+    height: fit-content;
     gap: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +68,6 @@ body {
     border-radius: 10px;
 }
 
-/* Below here is preview cards */
 ul {
     list-style: none;
     padding-left: 0;
@@ -167,7 +187,7 @@ ul {
 #bigCard {
     background-color: #66796B;
     flex-grow: 1;
-    height: 1%;
+    height: 100%;
     min-width: 400px;
     display: flex;
     border-radius: 10px;
@@ -194,6 +214,10 @@ ul {
 
 .bigCardImage {
     border-radius: 20px;
+}
+
+.bigId {
+    display: none;
 }
 
 /*Filter Bar Styling*/
