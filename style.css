@@ -1,6 +1,7 @@
 /* whole page styles */
 body {
-    font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif
+    font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
+    height: 100vh;
 }
 
 
@@ -23,20 +24,22 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
+    height: 60%;
 }
 
 #littleCards {
     display: flex;
     /* width: 70%; */
-    height: 90%;
-    overflow: scroll;
-    overflow-y: auto;
+    height: 100%;
+    border-radius: 20px;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
 #previewCardContainer {
     background-color: #D7A184;
     justify-content: center;
+    height: fit-content;
     gap: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +50,6 @@ body {
     border-radius: 10px;
 }
 
-/* Below here is preview cards */
 ul {
     list-style: none;
     padding-left: 0;
@@ -167,7 +169,7 @@ ul {
 #bigCard {
     background-color: #66796B;
     flex-grow: 1;
-    height: 1%;
+    height: 100%;
     min-width: 400px;
     display: flex;
     border-radius: 10px;
