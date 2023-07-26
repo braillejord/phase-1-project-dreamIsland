@@ -29,12 +29,6 @@ function previewCard(allChar) {
         previewId.style.display = "none"
         previewCard.appendChild(previewId)
 
-
-        const favoriteValue = document.createElement("p")
-        favoriteValue.classList.add("favorite")
-        favoriteValue.innerText = 0
-        previewCard.appendChild(favoriteValue)
-
         const previewSpecies = document.createElement("p")
         previewSpecies.setAttribute("class", "species")
         previewSpecies.style.display = "none"
@@ -60,9 +54,10 @@ function renderBigCard(id) {
         .then(oneChar => {
             bigCardImage.src = oneChar.image_uri
             bigName.innerText = oneChar.name['name-USen']
-            bigSpecies.innerText = oneChar.species
-            bigPersonality.innerText = oneChar.personality
-            bigBirthday.innerText = oneChar['birthday-string']
+            bigSpecies.innerText = 'Species:  ' + oneChar.species
+            bigPersonality.innerText = 'Personality:  ' + oneChar.personality
+            bigBirthday.innerText = 'Birthday:  ' + oneChar['birthday-string']
+            bigCatchphrase.innerText = 'Catchphrase:  ' + '"' + oneChar['catch-phrase'] + '"'
         })
 }
 
