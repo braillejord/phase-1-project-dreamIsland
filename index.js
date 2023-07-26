@@ -1,6 +1,8 @@
 const animalCrossingApi = "http://acnhapi.com/v1/villagers/"
 const previewList = document.getElementById("previewCardContainer")
 
+
+
 const fetchAnimals =
     fetch(animalCrossingApi)
         .then(r => r.json())
@@ -47,6 +49,7 @@ function previewCard(allChar) {
         }
     }
     randomizer()
+    showTommyBoy()
 }
 
 function randomizer() {
@@ -181,16 +184,51 @@ searchBar.addEventListener("input", (e) => {
             animal.parentNode.style.display = "none"
         }
     })
-    let cardsShown = false
-    function checkIfShown(card) {
-        return card.style.cssText === 'display: none;'
-    }
-    let value = cards.every(checkIfShown)
-    if (value === true) {
-        alert('No Aminals')
-    }
+    checkForNoAnimals()
 })
+function checkForNoAnimals() {
+    const tommyBoy = document.getElementById("Tom Nook")
+    const cards = Array.from(document.getElementsByClassName("previewCard"))
+    function checkIfShown(card) {return card.style.cssText === 'display: none;'}
+    let value = cards.every(checkIfShown)
+    if (value === true) {tommyBoy.style.display = "flex"}
+    else {tommyBoy.style.display = "none"}
+}
 
+function showTommyBoy() {
+    const previewCard = document.createElement("div")
+    previewCard.classList.add("previewCard")
+    previewCard.setAttribute("id", "Tom Nook")
+    previewCard.style.display = "none"
+    previewList.appendChild(previewCard)
+
+    const previewIcon = document.createElement("img")
+    previewIcon.classList.add("previewIcon")
+    previewIcon.src = "https://okasaneko.files.wordpress.com/2014/01/kittymama-fitness-03.jpg"
+    previewCard.appendChild(previewIcon)
+
+    const previewName = document.createElement("p")
+    previewName.innerText = "Uh-oh! \nNo Results"
+    previewName.classList.add("previewName")
+    previewCard.appendChild(previewName)
+
+    const previewId = document.createElement("p")
+    previewId.setAttribute("id", "Tom Nook")
+    previewId.style.display = "none"
+    previewCard.appendChild(previewId)
+
+    const previewSpecies = document.createElement("p")
+    previewSpecies.setAttribute("class", "species")
+    previewSpecies.style.display = "none"
+    previewSpecies.innerText = "No Results"
+    previewCard.appendChild(previewSpecies)
+
+    const previewPersonality = document.createElement("p")
+    previewPersonality.setAttribute("class", "personality")
+    previewPersonality.style.display = "none"
+    previewPersonality.innerText = "noPersonality"
+    previewCard.appendChild(previewPersonality)
+}
 
 //Favorite button below
 const favoriteButton = document.getElementById("favoriteButton")
