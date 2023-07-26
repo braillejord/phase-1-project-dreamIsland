@@ -100,42 +100,42 @@ function sortAlphabeticallyZA() {
     }
 }
 function renderSmallCard(animal) {
-        const previewCard = document.createElement("div")
-        previewCard.classList.add("previewCard")
-        previewCard.setAttribute("id", animal.children[1].innerText)
-        previewList.appendChild(previewCard)
+    const previewCard = document.createElement("div")
+    previewCard.classList.add("previewCard")
+    previewCard.setAttribute("id", animal.children[1].innerText)
+    previewList.appendChild(previewCard)
 
-        const previewIcon = document.createElement("img")
-        previewIcon.classList.add("previewIcon")
-        previewIcon.src = animal.children[0].src
-        previewCard.appendChild(previewIcon)
+    const previewIcon = document.createElement("img")
+    previewIcon.classList.add("previewIcon")
+    previewIcon.src = animal.children[0].src
+    previewCard.appendChild(previewIcon)
 
-        const previewName = document.createElement("p")
-        previewName.innerText = animal.children[1].innerText
-        previewName.classList.add("previewName")
-        previewCard.appendChild(previewName)
+    const previewName = document.createElement("p")
+    previewName.innerText = animal.children[1].innerText
+    previewName.classList.add("previewName")
+    previewCard.appendChild(previewName)
 
-        const previewId = document.createElement("p")
-        previewId.setAttribute("id", animal.children[2].id)
-        previewId.style.display = "none"
-        previewCard.appendChild(previewId)
+    const previewId = document.createElement("p")
+    previewId.setAttribute("id", animal.children[2].id)
+    previewId.style.display = "none"
+    previewCard.appendChild(previewId)
 
-        const previewSpecies = document.createElement("p")
-        previewSpecies.setAttribute("class", "species")
-        previewSpecies.style.display = "none"
-        previewSpecies.innerText = animal.children[3].innerText
-        previewCard.appendChild(previewSpecies)
+    const previewSpecies = document.createElement("p")
+    previewSpecies.setAttribute("class", "species")
+    previewSpecies.style.display = "none"
+    previewSpecies.innerText = animal.children[3].innerText
+    previewCard.appendChild(previewSpecies)
 
-        const previewPersonality = document.createElement("p")
-        previewPersonality.setAttribute("class", "personality")
-        previewPersonality.style.display = "none"
-        previewPersonality.innerText = animal.children[4].innerText
-        previewCard.appendChild(previewPersonality)
+    const previewPersonality = document.createElement("p")
+    previewPersonality.setAttribute("class", "personality")
+    previewPersonality.style.display = "none"
+    previewPersonality.innerText = animal.children[4].innerText
+    previewCard.appendChild(previewPersonality)
 
-        previewCard.onclick = () => {
-            renderBigCard(animal.children[2].id)
-        }
+    previewCard.onclick = () => {
+        renderBigCard(animal.children[2].id)
     }
+}
 ///Function for Personality Filter//////
 
 function searchByPersonality(personality) {
@@ -165,9 +165,9 @@ function searchBySpecies(species) {
 function clearSpecies() {
     const animals = document.getElementsByClassName("previewCard")
     Array.from(animals).forEach(animal => {
-    if (animal.style.display = "none") {
-        animal.style.display = "block"
-    }
+        if (animal.style.display = "none") {
+            animal.style.display = "block"
+        }
     })
 }
 
@@ -206,18 +206,44 @@ favoriteButton.addEventListener("click", () => {
 
     if (localStorage.favorites === undefined) {
         localStorage.setItem('favorites', JSON.stringify(favoriteIdArray))
+        const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+        const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+        localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+        renderFavoriteCards(updatedFavorites)
     }
 
-    const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
-    console.log(currentFavorites)
+    // else if (localStorage.favorites != undefined) {
+    //     const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+    //     const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+    //     localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+    //     renderFavoriteCards(updatedFavorites)
+    // }
 
-    const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
 
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
 
-    renderFavoriteCards(updatedFavorites)
 })
 
-function renderFavoriteCards(favorites) {
-    console.log(favorites)
+function renderFavoriteCards(updatedFavorites) {
+    updatedFavorites.forEach((singleFavorite) => {
+        fetch(animalCrossingApi + `${singleFavorite}`)
+            .then(r => r.json())
+            .then(singleVillagerInfo => {
+                const favoriteName = document.createElement('p')
+                favoriteName.innerText = singleVillagerInfo.name['name-USen']
+                favoriteName.classList.add("favoriteCardName")
+
+                const favoriteImg = document.createElement('img')
+                favoriteImg.src = singleVillagerInfo.image_uri
+                favoriteImg.classList.add("favoriteCardImg")
+
+                const favoriteCard = document.createElement('div')
+                favoriteCard.classList.add("favoriteCard")
+
+                favoriteCard.appendChild(favoriteName)
+                favoriteCard.appendChild(favoriteImg)
+
+                const favoriteCardContainer = document.getElementById('favoriteCardContainer')
+                favoriteCardContainer.appendChild(favoriteCard)
+            })
+    })
 }
