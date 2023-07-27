@@ -46,6 +46,10 @@ function previewCard(allChar) {
             renderBigCard(singleChar.id)
         }
     }
+    randomizer()
+}
+
+function randomizer() {
     renderBigCard(Math.floor(Math.random() * (391 - 1 + 1) + 1))
 }
 
@@ -69,13 +73,9 @@ function renderBigCard(id) {
 function sortAlphabeticallyAZ() {
     const animals = Array.from(document.getElementsByClassName("previewCard"))
     animals.sort(function (a, b) {
-        if (a.id > b.id) {
-            return 1;
-        }
-        if (b.id > a.id) {
-            return -1;
-        }
-        return 0;
+        if (a.id > b.id) {return 1}
+        if (b.id > a.id) {return -1}
+        return 0
     })
     previewList.innerText = ""
     for (let animal of animals) {
@@ -86,13 +86,9 @@ function sortAlphabeticallyAZ() {
 function sortAlphabeticallyZA() {
     const animals = Array.from(document.getElementsByClassName("previewCard"))
     animals.sort(function (a, b) {
-        if (a.id > b.id) {
-            return -1;
-        }
-        if (b.id > a.id) {
-            return 1;
-        }
-        return 0;
+        if (a.id > b.id) {return -1}
+        if (b.id > a.id) {return 1}
+        return 0
     });
     previewList.innerText = ""
     for (let animal of animals) {
