@@ -138,7 +138,7 @@ function searchByPersonality(personality) {
     const animals = document.getElementsByClassName("personality")
     Array.from(animals).forEach(animal => {
         if (animal.innerText === personality) {
-            animal.parentNode.style.display = "block"
+            animal.parentNode.style.display = "flex"
         } else {
             animal.parentNode.style.display = "none"
         }
@@ -151,7 +151,7 @@ function searchBySpecies(species) {
     const animals = document.getElementsByClassName("species")
     Array.from(animals).forEach(animal => {
         if (animal.innerText === species) {
-            animal.parentNode.style.display = "block"
+            animal.parentNode.style.display = "flex"
         } else {
             animal.parentNode.style.display = "none"
         }
@@ -174,7 +174,7 @@ searchBar.addEventListener("input", (e) => {
     const animals = document.getElementsByClassName("previewName")
     Array.from(animals).forEach(animal => {
         if (animal.textContent.toLowerCase().includes(searchValue)) {
-            animal.parentNode.style.display = "block"
+            animal.parentNode.style.display = "flex"
         } else {
             animal.parentNode.style.display = "none"
         }
@@ -248,13 +248,14 @@ function renderFavoriteCards(updatedFavorites) {
     dreamVillageTitle.style.display = "block"
 }
 
+const favoriteCardContainer = document.getElementById('favoriteCardContainer')
 const deleteButton = document.getElementById("deleteVillage")
+
 deleteButton.addEventListener("click", () => {
     localStorage.removeItem("favorites")
     const deleteFavoriteCard = document.getElementById("deleteTag")
     deleteFavoriteCard.remove()
 
-    const favoriteCardContainer = document.getElementById('favoriteCardContainer')
     if (favoriteCardContainer.textContent === "") {
         dreamVillageTitle.style.display = "none"
     }

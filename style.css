@@ -12,15 +12,10 @@ body {
 #header {
     /* flex-grow: 1; */
     background-color: #D4C2AD;
-    /* border-radius: 10px; */
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    /* we'll want to adjust these styles below */
-    /* figure out height of header bar */
     flex-direction: row;
-    /* gap: 20%; */
-    /* items to be adjusted above */
 }
 
 #header-dropdown-and-search {
@@ -182,9 +177,9 @@ ul {
 #bigCardContainer {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     padding-right: 10px;
     margin-top: 10px;
+    align-items: center;
 }
 
 #buttonContainer {
@@ -266,7 +261,6 @@ button:hover {
     border: none;
     cursor: pointer;
     width: 110px;
-    display: flex;
 }
 
 /* Dropdown button on hover & focus */
@@ -279,6 +273,7 @@ button:hover {
 .dropdown {
     position: relative;
     display: inline-block;
+    align-self: center;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -287,7 +282,7 @@ button:hover {
     position: absolute;
     background-color: #f6f6f6;
     max-width: fit-content;
-    min-width: 230px;
+    min-width: 190px;
     max-height: fit-content;
     border: 1px solid #ddd;
     z-index: 1;
@@ -300,7 +295,6 @@ button:hover {
     background-color: #f6f6f6;
     overflow :auto;
     max-width: fit-content;
-    min-width: 230px;
     height: 190px;
     border: 1px solid #ddd;
     z-index: 1;
