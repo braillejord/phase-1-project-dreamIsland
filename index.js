@@ -173,6 +173,7 @@ const searchBar = document.getElementById("searchField")
 searchBar.addEventListener("input", (e) => {
     const searchValue = e.target.value.toLowerCase()
     const animals = document.getElementsByClassName("previewName")
+    const cards = Array.from(document.getElementsByClassName("previewCard"))
     Array.from(animals).forEach(animal => {
         if (animal.textContent.toLowerCase().includes(searchValue)) {
             animal.parentNode.style.display = "flex"
@@ -180,6 +181,14 @@ searchBar.addEventListener("input", (e) => {
             animal.parentNode.style.display = "none"
         }
     })
+    let cardsShown = false
+    function checkIfShown(card) {
+        return card.style.cssText === 'display: none;'
+    }
+    let value = cards.every(checkIfShown)
+    if (value === true) {
+        alert('No Aminals')
+    }
 })
 
 
