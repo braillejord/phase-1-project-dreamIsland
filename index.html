@@ -17,10 +17,9 @@
 
 <body>
     <header id="header">
-        <div id="header-dropdown-and-search">
-            <!-- <img onclick="" id="homeBtn" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Animal_Crossing_Leaf.svg" alt=""> -->
+        <div id="header-dropdown">
             <div class="dropdown">
-                <button class="dropbtn">Name</button>
+                <button id="name-dropbtn" class="dropbtn">Name</button>
                 <div id="nameFilter" class="dropdown-content">
                     <a onclick="sortAlphabeticallyAZ()" id="sortAZ">A-Z</a>
                     <a onclick="sortAlphabeticallyZA()" id="sortZA">Z-A</a>
@@ -81,15 +80,17 @@
                     <a onclick="searchByPersonality('Snooty')" id="Snooty">Snooty</a>
                 </div>
             </div>
-            <div id="searchField">
-                <input type="text" id="search" placeholder="Search Villagers">
-            </div>
         </div>
         <div id="thisIsOpenSpaceRightHeader">
-            <h1>Welcome to your Dream Island™</h1>
+            <h1 id="website-title">Welcome to Your Dream Island™</h1>
+        </div>
+        <div id="header-search">
+            <div id="searchField">
+                <input type="text" id="search" placeholder="search villagers ">
+            </div>
         </div>
 
-    
+
 
     </header>
     <div id="masterBox">
