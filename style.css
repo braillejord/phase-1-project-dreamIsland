@@ -14,12 +14,22 @@ body {
     background-color: #D4C2AD;
     /* border-radius: 10px; */
     display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
     /* we'll want to adjust these styles below */
     /* figure out height of header bar */
     flex-direction: row;
     /* gap: 20%; */
     /* items to be adjusted above */
+}
+
+#header-dropdown-and-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-image {
+    height: 50px;
 }
 
 /* main body */
@@ -174,18 +184,21 @@ ul {
     flex-direction: column;
     flex-grow: 1;
     padding-right: 10px;
+    margin-top: 10px;
 }
 
 #buttonContainer {
     flex-grow: 1;
     display: flex;
     padding-top: 5px;
-    gap: 2px;
+    justify-content: space-evenly;
+    gap: 10px;
     align-items: center;
 }
 
 button {
     border-radius: 5px;
+    font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
 }
 
 #bigCard {
@@ -232,11 +245,12 @@ button {
 .dropbtn {
     background-color: #04AA6D;
     color: white;
-    min-width: 230px;
-    padding: 16px;
+    padding: 5px;
     font-size: 16px;
     border: none;
     cursor: pointer;
+    width: 110px;
+    display: flex;
 }
 
 /* Dropdown button on hover & focus */
