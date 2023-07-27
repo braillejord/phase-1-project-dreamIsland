@@ -190,7 +190,7 @@ ul {
 #buttonContainer {
     flex-grow: 1;
     display: flex;
-    padding-top: 5px;
+    padding: 10px 0px 5px 0px;
     justify-content: space-evenly;
     gap: 10px;
     align-items: center;
@@ -199,6 +199,13 @@ ul {
 button {
     border-radius: 5px;
     font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.24);
 }
 
 #bigCard {
@@ -237,6 +244,15 @@ button {
 
 .bigId {
     display: none;
+}
+
+.bigCardButtons {
+    background-color: #EFDFCC;
+    color: black;
+    font-size: medium;
+    border: none;
+    align-self: stretch;
+    width: -webkit-fill-available;
 }
 
 /*Filter Bar Styling*/
