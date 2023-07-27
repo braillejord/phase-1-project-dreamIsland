@@ -245,7 +245,6 @@ function renderFavoriteCards(updatedFavorites) {
 
                 const favoriteCard = document.createElement('div')
                 favoriteCard.classList.add("favoriteCard")
-                favoriteCard.setAttribute("id", "deleteTag")
 
                 favoriteCard.appendChild(favoriteName)
                 favoriteCard.appendChild(favoriteImg)
@@ -258,15 +257,30 @@ function renderFavoriteCards(updatedFavorites) {
     dreamVillageTitle.style.display = "block"
 }
 
-const favoriteCardContainer = document.getElementById('favoriteCardContainer')
 const deleteButton = document.getElementById("deleteVillage")
+const footer = document.getElementsByTagName("footer")
+const favoriteCardContainer = document.getElementById('favoriteCardContainer')
 
 deleteButton.addEventListener("click", () => {
     localStorage.removeItem("favorites")
-    const deleteFavoriteCard = document.getElementById("deleteTag")
-    deleteFavoriteCard.remove()
+    favoriteCardContainer.textContent = ""
 
     if (favoriteCardContainer.textContent === "") {
         dreamVillageTitle.style.display = "none"
+    }
+})
+
+const seeDreamIsland = document.getElementById('seeFavoritesButton')
+
+seeDreamIsland.addEventListener("click", () => {
+    if (localStorage.favorites != undefined) {
+        const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+        // const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+        localStorage.setItem('favorites', JSON.stringify(currentFavorites))
+        const favoriteCardContainer = document.getElementById('favoriteCardContainer')
+        favoriteCardContainer.innerText = ""
+        renderFavoriteCards(currentFavorites)
+    } else {
+        alert("Add a villager to your dream island first!")
     }
 })
