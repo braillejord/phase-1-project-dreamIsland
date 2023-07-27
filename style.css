@@ -9,7 +9,7 @@ body {
 
 /* header */
 #header {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     background-color: #D4C2AD;
     border-radius: 10px;
     display: flex;
@@ -21,19 +21,6 @@ body {
     /* items to be adjusted above */
 }
 
-/* footer */
-#footer {
-    flex-grow: 1;
-    background-color: #D4C2AD;
-    border-radius: 10px;
-    display: flex;
-    margin-top: 10px;
-    /* we'll want to adjust these styles below */
-    /* figure out height of footer bar */
-    flex-direction: row;
-    /* gap: 20%; */
-    /* items to be adjusted above */
-}
 
 
 /* main body */
@@ -100,19 +87,19 @@ ul {
     0% {
         -webkit-transform: rotate(3deg);
     }
-
+    
     25% {
         -webkit-transform: rotate(-3deg);
     }
-
+    
     50% {
         -webkit-transform: rotate(3deg);
     }
-
+    
     75% {
         -webkit-transform: rotate(-3deg);
     }
-
+    
     100% {
         -webkit-transform: rotate(0deg);
     }
@@ -122,19 +109,19 @@ ul {
     0% {
         -ms-transform: rotate(3deg);
     }
-
+    
     25% {
         ms-transform: rotate(-3deg);
     }
-
+    
     50% {
         ms-transform: rotate(3deg);
     }
-
+    
     75% {
         -ms-transform: rotate(-3deg);
     }
-
+    
     100% {
         -ms-transform: rotate(0deg);
     }
@@ -144,19 +131,19 @@ ul {
     0% {
         transform: rotate(3deg);
     }
-
+    
     25% {
         transform: rotate(-3deg);
     }
-
+    
     50% {
         transform: rotate(3deg);
     }
-
+    
     75% {
         transform: rotate(-3deg);
     }
-
+    
     100% {
         transform: rotate(0deg);
     }
@@ -302,3 +289,50 @@ ul {
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 /*End Filter Bar Styling*/
+
+/* Favorite Bar Styling */
+#footer {
+    /* flex-grow: 1; */
+    background-color: #D4C2AD;
+    border-radius: 10px;
+    margin-top: 10px;
+    min-height: 10%;
+}
+
+#dream-village-title {
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+    padding-top: 5px;
+}
+
+#favoriteCardContainer {
+    display: flex;
+    /* margin-top: 10px;
+    gap: 10px;
+    padding: 10px;
+    align-items: center; */
+}
+
+.favoriteCard {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-radius: 20px;
+    /* border-style: solid;
+    border-color: #D7A184; */
+    align-items: center;
+}
+
+.favoriteCardName {
+    font-size: 20px;
+    margin: 0;
+    padding: 5px;
+}
+
+.favoriteCardImg {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
