@@ -99,6 +99,7 @@ function renderSmallCard(animal) {
     const previewCard = document.createElement("div")
     previewCard.classList.add("previewCard")
     previewCard.setAttribute("id", animal.children[1].innerText)
+    previewCard.style.display = "flex"
     previewList.appendChild(previewCard)
 
     const previewIcon = document.createElement("img")
@@ -162,7 +163,7 @@ function clearSpecies() {
     const animals = document.getElementsByClassName("previewCard")
     Array.from(animals).forEach(animal => {
         if (animal.style.display = "none") {
-            animal.style.display = "block"
+            animal.style.display = "flex"
         }
     })
 }
