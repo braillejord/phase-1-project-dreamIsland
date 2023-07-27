@@ -73,8 +73,8 @@ function renderBigCard(id) {
 function sortAlphabeticallyAZ() {
     const animals = Array.from(document.getElementsByClassName("previewCard"))
     animals.sort(function (a, b) {
-        if (a.id > b.id) {return 1}
-        if (b.id > a.id) {return -1}
+        if (a.id > b.id) { return 1 }
+        if (b.id > a.id) { return -1 }
         return 0
     })
     previewList.innerText = ""
@@ -86,8 +86,8 @@ function sortAlphabeticallyAZ() {
 function sortAlphabeticallyZA() {
     const animals = Array.from(document.getElementsByClassName("previewCard"))
     animals.sort(function (a, b) {
-        if (a.id > b.id) {return -1}
-        if (b.id > a.id) {return 1}
+        if (a.id > b.id) { return -1 }
+        if (b.id > a.id) { return 1 }
         return 0
     });
     previewList.innerText = ""
@@ -213,7 +213,7 @@ favoriteButton.addEventListener("click", () => {
         updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
         localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
         renderFavoriteCards(updatedFavorites)
-    } 
+    }
     else if (JSON.parse(localStorage.favorites).length === 10) {
         alert("Your village is full!")
     }
@@ -226,7 +226,9 @@ favoriteButton.addEventListener("click", () => {
         renderFavoriteCards(updatedFavorites)
     }
 })
-    
+
+const dreamVillageTitle = document.getElementById('dream-village-title')
+
 function renderFavoriteCards(updatedFavorites) {
     updatedFavorites.forEach((singleFavorite) => {
         fetch(animalCrossingApi + `${singleFavorite}`)
@@ -249,19 +251,20 @@ function renderFavoriteCards(updatedFavorites) {
 
                 const favoriteCardContainer = document.getElementById('favoriteCardContainer')
                 favoriteCardContainer.appendChild(favoriteCard)
-                
+
             })
     })
+    dreamVillageTitle.style.display = "block"
 }
-
 
 const deleteButton = document.getElementById("deleteVillage")
 deleteButton.addEventListener("click", () => {
-
     localStorage.removeItem("favorites")
     const deleteFavoriteCard = document.getElementById("deleteTag")
     deleteFavoriteCard.remove()
 
+    const favoriteCardContainer = document.getElementById('favoriteCardContainer')
+    if (favoriteCardContainer.textContent === "") {
+        dreamVillageTitle.style.display = "none"
+    }
 })
-
-
