@@ -233,12 +233,26 @@ function renderFavoriteCards(updatedFavorites) {
 
                 const favoriteCard = document.createElement('div')
                 favoriteCard.classList.add("favoriteCard")
+                favoriteCard.setAttribute("id", "deleteTag")
 
                 favoriteCard.appendChild(favoriteName)
                 favoriteCard.appendChild(favoriteImg)
 
                 const favoriteCardContainer = document.getElementById('favoriteCardContainer')
                 favoriteCardContainer.appendChild(favoriteCard)
+                
             })
     })
 }
+
+
+const deleteButton = document.getElementById("deleteVillage")
+deleteButton.addEventListener("click", () => {
+
+    localStorage.removeItem("favorites")
+    const deleteFavoriteCard = document.getElementById("deleteTag")
+    deleteFavoriteCard.remove()
+
+})
+
+
