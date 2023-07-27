@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📖 The Exhaustive Encyclopedia of All Animal Crossing Villagers in the World</title>
+    <title>The Exhaustive Encyclopedia of All Animal Crossing Villagers in the World</title>
     <link rel="icon" type="image/x-icon"
         href="https://upload.wikimedia.org/wikipedia/commons/7/7c/Animal_Crossing_Leaf.svg">
     <script defer src="./index.js"></script>
@@ -88,20 +88,21 @@
         <div id="littleCards">
             <ul id="previewCardContainer"></ul>
         </div>
-        <div id="bigCard">
-            <h2 id="bigName" class="bigName">Name</h2>
-            <img id="bigCardImage" class="bigCardImage" src="" alt="Villager Coming In Hot...">
-            <p id="bigSpecies" class="bigInfo" class="species">Species</p>
-            <p id="bigPersonality" class="bigInfo" class="personalityType">Personality</p>
-            <p id="bigBirthday" class="bigInfo" class="birthday">Birthday</p>
-            <p id="bigCatchphrase" class="bigInfo" class="catchphrase">Catchphrase</p>
-            <p id="bigId" class="bigId" class="id"></p>
-            <button id="favoriteButton">Add to Dream Village</button>
-
-            <button id="randomButton">Random Villager</button>
-            <button id="deleteVillage">Rebuild your Village!</button>
-            <button onlick="randomizer()" id="randomButton">Random Villager</button>
-
+        <div id="bigCardContainer">
+            <div id="bigCard">
+                <h2 id="bigName" class="bigName">Name</h2>
+                <img id="bigCardImage" class="bigCardImage" src="" alt="Villager Coming In Hot...">
+                <p id="bigSpecies" class="bigInfo" class="species">Species</p>
+                <p id="bigPersonality" class="bigInfo" class="personalityType">Personality</p>
+                <p id="bigBirthday" class="bigInfo" class="birthday">Birthday</p>
+                <p id="bigCatchphrase" class="bigInfo" class="catchphrase">Catchphrase</p>
+                <p id="bigId" class="bigId" class="id"></p>
+            </div>
+            <div id="buttonContainer">
+                <button id="favoriteButton">Add to Dream Village</button>
+                <button id="deleteVillage">Rebuild your Village!</button>
+                <button onclick="randomizer()" id="randomButton">Random Villager</button>
+            </div>
         </div>
     </div>
     <footer id="footer">

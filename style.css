@@ -4,6 +4,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 
@@ -11,7 +12,7 @@ body {
 #header {
     /* flex-grow: 1; */
     background-color: #D4C2AD;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     display: flex;
     margin-bottom: 10px;
     /* we'll want to adjust these styles below */
@@ -20,8 +21,6 @@ body {
     /* gap: 20%; */
     /* items to be adjusted above */
 }
-
-
 
 /* main body */
 #masterBox {
@@ -34,7 +33,7 @@ body {
 
 #littleCards {
     display: flex;
-    /* width: 70%; */
+    flex-grow: 2;
     height: 100%;
     border-radius: 20px;
     overflow-y: scroll;
@@ -42,9 +41,9 @@ body {
 }
 
 #previewCardContainer {
-    background-color: #D7A184;
+    /* background-color: #D7A184; */
     justify-content: center;
-    height: fit-content;
+    height: 100%;
     gap: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +51,6 @@ body {
     flex-grow: 1.5;
     margin: 0;
     padding: 10px;
-    border-radius: 10px;
 }
 
 ul {
@@ -171,11 +169,30 @@ ul {
 }
 
 /* BigCard styling */
+#bigCardContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+#buttonContainer {
+    flex-grow: 1;
+    display: flex;
+    padding-top: 5px;
+    gap: 2px;
+    align-items: center;
+}
+
+button {
+    border-radius: 5px;
+}
+
 #bigCard {
     background-color: #66796B;
-    flex-grow: 1;
-    height: 100%;
-    min-width: 400px;
+    flex-grow: 1.5;
+    /* height: 100%; */
+    width: 400px;
     display: flex;
     border-radius: 10px;
     flex-direction: column;
@@ -294,12 +311,13 @@ ul {
 #footer {
     /* flex-grow: 1; */
     background-color: #D4C2AD;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-top: 10px;
-    min-height: 10%;
+    /* min-height: 10%; */
 }
 
 #dream-village-title {
+    display: none;
     font-size: 25px;
     text-align: center;
     margin: 0;
