@@ -242,7 +242,7 @@ favoriteButton.addEventListener("click", () => {
 })
 
 const newFavoriteId = document.getElementById('bigId')
-let updatedFavorites = [];
+let updatedFavorites = []
 
 favoriteButton.addEventListener("click", () => {
     if (localStorage.favorites === undefined) {
@@ -266,6 +266,26 @@ favoriteButton.addEventListener("click", () => {
     }
 })
 
+// //on page load this builds out the favorites list
+// function onPageLoadFavorites(){
+//     if (localStorage.favorites === undefined) {
+//         const favoriteIdArray = []
+//         localStorage.setItem('favorites', JSON.stringify(favoriteIdArray))
+//         const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+//         updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+//         localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+//         renderFavoriteCards(updatedFavorites)
+//     }
+//     else {
+//         const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+//         const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+//         localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+//         const favoriteCardContainer = document.getElementById('favoriteCardContainer')
+//         favoriteCardContainer.innerText = ""
+//         renderFavoriteCards(updatedFavorites)
+//     }
+// }
+// onPageLoadFavorites()
 const dreamVillageTitle = document.getElementById('dream-village-title')
 
 function renderFavoriteCards(updatedFavorites) {
@@ -300,11 +320,11 @@ const favoriteCardContainer = document.getElementById('favoriteCardContainer')
 const deleteButton = document.getElementById("deleteVillage")
 
 deleteButton.addEventListener("click", () => {
-    localStorage.removeItem("favorites")
     const deleteFavoriteCard = document.getElementById("deleteTag")
+    let i = 0;
+    while (i < 10) {
     deleteFavoriteCard.remove()
-
-    if (favoriteCardContainer.textContent === "") {
-        dreamVillageTitle.style.display = "none"
+    i++
     }
+    localStorage.removeItem("favorites")
 })
