@@ -197,32 +197,31 @@ favoriteButton.addEventListener("click", () => {
     }
 })
 
-// 'bigId' will be the id for the id on the big card
 const newFavoriteId = document.getElementById('bigId')
+let updatedFavorites = [];
 
 favoriteButton.addEventListener("click", () => {
-    //    console.log(localStorage.getItem('favorites').length)
-    const favoriteIdArray = []
-
     if (localStorage.favorites === undefined) {
+        const favoriteIdArray = []
         localStorage.setItem('favorites', JSON.stringify(favoriteIdArray))
+        const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
+        updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
+        localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+        renderFavoriteCards(updatedFavorites)
+    } 
+    else if (JSON.parse(localStorage.favorites).length === 10) {
+        alert("Your village is full!")
+    }
+    else {
         const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
         const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
         localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+        const favoriteCardContainer = document.getElementById('favoriteCardContainer')
+        favoriteCardContainer.innerText = ""
         renderFavoriteCards(updatedFavorites)
     }
-
-    // else if (localStorage.favorites != undefined) {
-    //     const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
-    //     const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
-    //     localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
-    //     renderFavoriteCards(updatedFavorites)
-    // }
-
-
-
 })
-
+    
 function renderFavoriteCards(updatedFavorites) {
     updatedFavorites.forEach((singleFavorite) => {
         fetch(animalCrossingApi + `${singleFavorite}`)
