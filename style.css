@@ -11,35 +11,40 @@ body {
 
 /* header */
 #header {
-    /* flex-grow: 1; */
-    background: linear-gradient(180deg, #bf9c9c 0%, #be7676 100%);
-    /* border-radius: 10px; */
+    background: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 10px;
     flex-direction: row;
 }
 
-#homeBtn {
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-#header-dropdown-and-search {
+#header-dropdown {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#search {
-    height: 1.5rem;
-    border-radius: 5px;
-    box-shadow: inset;
-    width: 150px;
+#header-search {
+    display: flex;
+    align-items: center;
 }
 
-#header-image {
-    height: 50px;
+#name-dropbtn {
+    margin-left: 20px;
+}
+
+#search {
+    height: 2rem;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
+    text-align: right;
+}
+
+#website-title {
+    margin: 10px;
+    font-size: 35px;
 }
 
 /* main body */
@@ -246,6 +251,7 @@ button:hover {
     border-radius: 10px;
     border-color: #EFDFCC;
     padding: 0px 20px;
+    width: 268px;
 }
 
 .bigCardImage {
@@ -275,12 +281,13 @@ button:hover {
 /* Dropdown Button */
 .dropbtn {
     background-color: #84c8ad;
-
     padding: 5px;
-    font-size: 16px;
+    margin: 10px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
-    width: 110px;
+    width: 120px;
+    height: 36px;
 }
 
 /* Dropdown button on hover & focus */
@@ -306,6 +313,7 @@ button:hover {
     max-height: fit-content;
     border: 1px solid #ddd;
     z-index: 1;
+    margin-left: 10px;
 }
 
 /* Links inside the dropdown */
@@ -370,10 +378,6 @@ button:hover {
 
 #favoriteCardContainer {
     display: flex;
-    /* margin-top: 10px;
-    gap: 10px;
-    padding: 10px;
-    align-items: center; */
 }
 
 .favoriteCard {
