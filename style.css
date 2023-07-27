@@ -178,6 +178,7 @@ ul {
 #bigCardContainer {
     display: flex;
     flex-direction: column;
+    flex-basis: min-content;
     padding-right: 10px;
     margin-top: 10px;
     align-items: center;
