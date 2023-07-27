@@ -17,11 +17,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
-    /* we'll want to adjust these styles below */
-    /* figure out height of header bar */
     flex-direction: row;
-    /* gap: 20%; */
-    /* items to be adjusted above */
 }
 
 #homeBtn {
@@ -67,12 +63,13 @@ body {
 #previewCardContainer {
     /* background-color: #D7A184; */
     justify-content: center;
+    align-content: baseline;
     height: 100%;
     gap: 10px;
     display: flex;
     flex-wrap: wrap;
     text-align: justify;
-    flex-grow: 1.5;
+    flex-grow: 2;
     margin: 0;
     padding: 10px;
 }
@@ -196,15 +193,16 @@ ul {
 #bigCardContainer {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-basis: min-content;
     padding-right: 10px;
     margin-top: 10px;
+    align-items: center;
 }
 
 #buttonContainer {
     flex-grow: 1;
     display: flex;
-    padding-top: 5px;
+    padding: 10px 0px 5px 0px;
     justify-content: space-evenly;
     gap: 10px;
     align-items: center;
@@ -213,6 +211,13 @@ ul {
 button {
     border-radius: 5px;
     font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.24);
 }
 
 #bigCard {
@@ -256,6 +261,15 @@ button {
     display: none;
 }
 
+.bigCardButtons {
+    background-color: #EFDFCC;
+    color: black;
+    font-size: medium;
+    border: none;
+    align-self: stretch;
+    width: -webkit-fill-available;
+}
+
 /*Filter Bar Styling*/
 
 /* Dropdown Button */
@@ -267,7 +281,6 @@ button {
     border: none;
     cursor: pointer;
     width: 110px;
-    display: flex;
 }
 
 /* Dropdown button on hover & focus */
@@ -280,6 +293,7 @@ button {
 .dropdown {
     position: relative;
     display: inline-block;
+    align-self: center;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -288,7 +302,7 @@ button {
     position: absolute;
     background-color: #f6f6f6;
     max-width: fit-content;
-    min-width: 230px;
+    min-width: 190px;
     max-height: fit-content;
     border: 1px solid #ddd;
     z-index: 1;
@@ -301,7 +315,6 @@ button {
     background-color: #f6f6f6;
     overflow :auto;
     max-width: fit-content;
-    min-width: 230px;
     height: 190px;
     border: 1px solid #ddd;
     z-index: 1;
