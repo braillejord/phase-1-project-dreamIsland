@@ -9,7 +9,7 @@ Your favorites will be stored in the local storage of your device's browser so b
 ## Final Project URL
 
 If you'd like to check out the final project, use the below URL:
-https://curtisodell1.github.io/groupProjectPhase1/
+https://curtisodell1.github.io/dreamIsland/
 
 ## For Your Information
 Feel free to use this project as a launching-off point for your future creations. 
