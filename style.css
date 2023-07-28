@@ -16,12 +16,14 @@ body {
     justify-content: space-between;
     margin-bottom: 10px;
     flex-direction: row;
+    flex-shrink: 1;
 }
 
 #header-dropdown {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 1;
 }
 
 #header-search {
