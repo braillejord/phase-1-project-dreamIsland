@@ -9,7 +9,7 @@ Your favorites will be stored in the local storage of your device's browser so b
 ## Final Project URL
 
 If you'd like to check out the final project, use the below URL:
-INSERT URL HERE.
+https://curtisodell1.github.io/groupProjectPhase1/
 
 ## For Your Information
 Feel free to use this project as a launching-off point for your future creations. 
