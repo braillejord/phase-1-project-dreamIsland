@@ -226,7 +226,7 @@ button:hover {
 }
 
 #bigCard {
-    background-color: #73b198;
+    background-color: #54bc94;
     box-shadow: 2px 2px 10px 0 #562274;
     flex-grow: 1.5;
     width: 400px;
@@ -269,6 +269,7 @@ button:hover {
 
 .bigCardButtons {
     background-color: #EFDFCC;
+    margin-bottom: 4px;
     color: black;
     font-size: medium;
     border: none;
@@ -277,14 +278,14 @@ button:hover {
 }
 
 .bigCardButtons:hover {
-    background-color: #d8bfa2;
+    background-color: #D7A184;
 }
 
 /*Filter Bar Styling*/
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #84c8ad;
+    background-color: #54bc94;
     padding: 5px;
     margin: 10px;
     font-size: 20px;
@@ -368,7 +369,8 @@ button:hover {
 /* Favorite Bar Styling */
 #footer {
     /* flex-grow: 1; */
-    background-color: #D4C2AD;
+    /* background-color: #D4C2AD; */
+    background-color: #D7A184
     /* border-radius: 10px; */
     margin-top: 10px;
     /* min-height: 10%; */
