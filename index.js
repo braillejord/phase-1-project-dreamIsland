@@ -1,4 +1,4 @@
-const animalCrossingApi = "http://acnhapi.com/v1/villagers/"
+const animalCrossingApi = "https://acnhapi.com/v1/villagers/"
 const previewList = document.getElementById("previewCardContainer")
 
 
