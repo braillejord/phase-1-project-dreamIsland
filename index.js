@@ -63,10 +63,10 @@ function renderBigCard(id) {
             bigCardImage.src = oneChar.image_uri
             bigCardImage.style
             bigName.innerText = oneChar.name['name-USen']
-            bigSpecies.innerText = 'Species:  ' + oneChar.species
-            bigPersonality.innerText = 'Personality:  ' + oneChar.personality
-            bigBirthday.innerText = 'Birthday:  ' + oneChar['birthday-string']
-            bigCatchphrase.innerText = 'Catchphrase:  ' + '"' + oneChar['catch-phrase'] + '"'
+            bigSpecies.innerText = 'Species:   ' + oneChar.species
+            bigPersonality.innerText = 'Personality:   ' + oneChar.personality
+            bigBirthday.innerText = 'Birthday:   ' + oneChar['birthday-string']
+            bigCatchphrase.innerText = 'Catchphrase:   ' + '"' + oneChar['catch-phrase'] + '"'
             bigId.innerText = oneChar.id
         })
 }
@@ -266,26 +266,6 @@ favoriteButton.addEventListener("click", () => {
     }
 })
 
-// //on page load this builds out the favorites list
-// function onPageLoadFavorites(){
-//     if (localStorage.favorites === undefined) {
-//         const favoriteIdArray = []
-//         localStorage.setItem('favorites', JSON.stringify(favoriteIdArray))
-//         const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
-//         updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
-//         localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
-//         renderFavoriteCards(updatedFavorites)
-//     }
-//     else {
-//         const currentFavorites = JSON.parse(localStorage.getItem('favorites'))
-//         const updatedFavorites = [...currentFavorites, newFavoriteId.innerText]
-//         localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
-//         const favoriteCardContainer = document.getElementById('favoriteCardContainer')
-//         favoriteCardContainer.innerText = ""
-//         renderFavoriteCards(updatedFavorites)
-//     }
-// }
-// onPageLoadFavorites()
 const dreamVillageTitle = document.getElementById('dream-village-title')
 
 function renderFavoriteCards(updatedFavorites) {
@@ -341,3 +321,4 @@ seeDreamIsland.addEventListener("click", () => {
     } else {
         alert("Add a villager to your dream island first!")
     }
+})

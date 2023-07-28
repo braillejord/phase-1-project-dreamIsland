@@ -222,13 +222,13 @@ button {
 }
 
 button:hover {
-    box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.24);
+    box-shadow: 2px 2px 10px 0 #562274;
 }
 
 #bigCard {
     background-color: #73b198;
+    box-shadow: 2px 2px 10px 0 #562274;
     flex-grow: 1.5;
-    /* height: 100%; */
     width: 400px;
     display: flex;
     border-radius: 10px;
@@ -276,6 +276,10 @@ button:hover {
     width: -webkit-fill-available;
 }
 
+.bigCardButtons:hover {
+    background-color: #d8bfa2;
+}
+
 /*Filter Bar Styling*/
 
 /* Dropdown Button */
@@ -293,7 +297,8 @@ button:hover {
 /* Dropdown button on hover & focus */
 .dropbtn:hover,
 .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color: #65a68c;
+    box-shadow: 2px 2px 10px 0 rgb(56, 55, 55);
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -317,6 +322,10 @@ button:hover {
 }
 
 /* Links inside the dropdown */
+#nameFilter {
+    margin-left: 20px;
+}
+
 #speciesFilter {
     display: none;
     position: absolute;
@@ -354,9 +363,6 @@ button:hover {
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover #speciesFilter {display: block;}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
 /*End Filter Bar Styling*/
 
 /* Favorite Bar Styling */
@@ -370,7 +376,7 @@ button:hover {
 
 #dream-village-title {
     display: none;
-    /* font-size: 25px; */
+    font-size: 25px;
     text-align: center;
     margin: 0;
     padding-top: 5px;
