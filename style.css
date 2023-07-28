@@ -38,10 +38,13 @@ body {
 #search {
     height: 2rem;
     border-radius: 5px;
-    width: 250px;
+    border-style: none;
+    width: 220px;
     margin-right: 10px;
     font-family: 'Quicksand', 'Borel', 'Pangolin', sans-serif;
-    text-align: right;
+    text-align: left;
+    font-size: 18px;
+    box-shadow: 2px 2px 10px 0 #562274;
 }
 
 #website-title {
@@ -221,6 +224,7 @@ button {
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    box-shadow: 2px 2px 10px 0 #562274;
 }
 
 button:hover {
