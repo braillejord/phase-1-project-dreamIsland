@@ -2,6 +2,8 @@
 
 This site allows Animal Crossing: New Horizons fans to discover new villagers and build a dream island roster.
 
+<img width="1512" alt="ac-landing-page" src="https://github.com/braillejord/phase-1-project-dreamIsland/assets/43306719/c0cb5081-7447-4f3c-a014-eca2140336fa">
+
 ## Favorites Storage
 
 Your favorites will be stored in the local storage of your device's browser so be aware that your favorites list will be lost if you move to a new island (device). 
